@@ -13,9 +13,9 @@ LOCATOR_XF_DIR = os.path.join(Base_url,r"locator\xf")
 # PAGES_DIR
 PAGE_XF_DIR = os.path.join(Base_url,r"pages\xf")
 # RESULT_DIR
-RESULT_XF_ERROR_SCREENSHOT_DIR = os.path.join(Base_url,r"xf\error_screenshot")
-RESULT_XF_LOGS_DIR = os.path.join(Base_url,r"xf\logs")
-RESULT_XF_REPORTS_DIR = os.path.join(Base_url,r"xf\reports")
+RESULT_XF_ERROR_SCREENSHOT_DIR = os.path.join(Base_url,r"result\xf\error_screenshot")
+RESULT_XF_LOGS_DIR = os.path.join(Base_url,r"result\xf\logs")
+RESULT_XF_REPORTS_DIR = os.path.join(Base_url,r"result\xf\reports")
 # TESTCASE_DIR
-TESTCASE_XF_DIR = os.path.join(Base_url,r"testcase\xf")
+TESTCASE_XF_DIR = os.path.join(Base_url,r"result\testcase\xf")
 
