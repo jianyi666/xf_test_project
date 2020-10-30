@@ -37,5 +37,4 @@ def CreatLogs(filepath):
     fh.setFormatter(mate)
     return log
 
-xf_log = CreatLogs(RESULT_XF_LOGS_DIR)
 
