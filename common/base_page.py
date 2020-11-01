@@ -195,6 +195,84 @@ class BasePage():
         else:
             self.log.info(f"{target_ele_desc}，成功！")
 
+    def Get_Element_Attribute(self,target_ele,target_ele_desc,attribute):
+        """
+        获取元素的，属性
+        :return:
+        """
+        try:
+            attr = self.driver.find_element(*target_ele).get_attribute(attribute)
+        except Exception as e:
+            self.Error_ScreenShot(self.screenshotfilepath, target_ele_desc)
+            self.log.error(f"{target_ele_desc}，失败！")
+            self.log.exception(e)
+            raise e
+        else:
+            self.log.info(f"{target_ele_desc}，成功！")
+            return attr
+
+    def Get_Element_Attribute_From_Text(self,value,attribute,desc):
+        """
+        通过输入信息查找元素，获取元素的属性
+        :param value:
+        :param attr:
+        :return:
+        """
+        locator = (MobileBy.XPATH, f'//*[cotains(@text,"{value}")]')
+        try:
+            attr = self.driver.find_element(*locator).get_attribute(attribute)
+        except Exception as e:
+            self.Error_ScreenShot(self.screenshotfilepath, desc)
+            self.log.error(f"{desc}，失败！")
+            self.log.exception(e)
+            raise e
+        else:
+            self.log.info(f"{desc}，成功！")
+            return attr
+
+    def Switch_To_WebView(self,WebView_Name,desc):
+        """
+        切换到目标WebView
+        :param WebView_Name:
+        :param loc_desc:
+        :return:
+        """
+
+        try:
+            self.driver.switch_to.context(WebView_Name)
+        except Exception as e :
+            self.Error_ScreenShot(self.screenshotfilepath, desc)
+            self.log.error(f"{desc}，失败！")
+            self.log.exception(e)
+            raise e
+        else:
+            self.log.info(f"{desc}，成功！")
+
+    def Switch_To_windows(self,target_ele,target_ele_desc):
+        """
+        切换到目标windows
+        :param target_ele:
+        :param target_ele_desc:
+        :return:
+        """
+        # 获取所有的句柄
+        wins = self.driver.window_handles
+        # 遍历所有窗口的句柄，依次进行切换，查找该窗口是否有
+        for win in wins:
+            self.driver.switch_to.window(win)
+            try:
+                WebDriverWait(driver,3,0.5).until(EC.visibility_of_element_located(target_ele))
+            except Exception as e:
+                pass
+            else:
+                self.log.info(f"{target_ele_desc},成功！")
+                break
+        else:
+            self.log.info(f"{target_ele_desc},失败！")
+            self.Error_ScreenShot(self.screenshotfilepath, target_ele_desc)
+
+
+
 
 
 if __name__ == '__main__':

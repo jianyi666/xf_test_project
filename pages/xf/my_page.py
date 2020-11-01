@@ -22,6 +22,7 @@ class MyPage(BasePage):
         我的页面，点击手机登录
         :return:
         """
+        self.Wait_Element_Visibility(my_page_Locator.MyPage_Moblie_Login,"我的页面，点击手机登录页面")
         self.Click_Eelement(my_page_Locator.MyPage_Moblie_Login,"我的页面，点击手机登录页面")
 
     def MyPage_Click_Mine_Login(self):
@@ -29,6 +30,7 @@ class MyPage(BasePage):
         我的页面，点击登录账号
         :return:
         """
+        self.Wait_Element_Visibility(my_page_Locator.MyPage_Mine_Login,"我的页面，点击账户登录")
         self.Click_Eelement(my_page_Locator.MyPage_Mine_Login,"我的页面，点击账户登录")
 
     def MyPage_Swipe_To_Contact_Customer_Service_Visibility(self):
@@ -39,6 +41,13 @@ class MyPage(BasePage):
         self.Swipe_Element_To_Visibility(my_page_Locator.MyPage_Contact_Customer_Service,"我的页面，滑动到联系客服可见",
                                          my_page_Locator.MyPage_Top_Locator,my_page_Locator.MyPage_Bottom_Locator
                                          )
+
+    def MyPage_Click_Contact_Customer_Service(self):
+        """
+        我的页面，点击联系客服
+        :return:
+        """
+        self.Click_Eelement(my_page_Locator.MyPage_Contact_Customer_Service,"我的页面，点击联系客服")
 
 
 
