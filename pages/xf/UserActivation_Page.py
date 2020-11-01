@@ -6,6 +6,7 @@
 #@Sotfware :PyCharm
 from common.base_page import BasePage
 from locator.xf.xf_page_locators import UserActivation_Page_Locator
+import time
 class UserActivationPage(BasePage):
 
     def UserActivation_Input_Mobile(self,value):
@@ -14,7 +15,7 @@ class UserActivationPage(BasePage):
         :param value:
         :return:
         """
-        self.Wait_Element_Visibility(UserActivation_Page_Locator.UserActivation_Moblie,"用户激活页面，输入手机号")
+        time.sleep(1)
         self.Input_Element_SendKeys(UserActivation_Page_Locator.UserActivation_Moblie,"用户激活页面，输入手机号",value)
 
 

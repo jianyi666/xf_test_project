@@ -11,3 +11,7 @@ class Test_RecommenderRegistration():
     @pytest.mark.parametrize("cases",RecommenderRegistration_Error_Data)
     def test_input_errot_product_code(self,cases,RecommenderRegistration_Fixture):
         pass
+
+
+if __name__ == '__main__':
+    pytest.main(["-s", "test_recommender_registration_page_case.py"])

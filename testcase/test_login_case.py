@@ -6,12 +6,21 @@
 #@Sotfware :PyCharm
 
 import pytest
+import time
 from data.xf.login_test_data import Login_Error_Data
 class Test_Login():
 
     @pytest.mark.parametrize("cases",Login_Error_Data)
-    def test_login_error_infor(self,cases,Login_Fixture):
+    def test_login_error_info(self,cases,Login_Fixture):
 
         mypage = Login_Fixture
         # 点击 手机登录
-        mypage.MyPage_Click_Moblie_Login()
+        time.sleep(6)
+        mypage.MyPage_Click_My()
+
+
+
+
+if __name__ == '__main__':
+    pytest.main(["-s","test_login_case.py"])
+

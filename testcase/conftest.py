@@ -18,7 +18,7 @@ from pages.xf.GeneralTransactionlogin_Page import GeneralTransactionloginPage
 @pytest.fixture(scope="class")
 def Login_Fixture():
     # 获取我的页面
-    driver = Remote(Config.get("xf_remote","command_executor"),Config.get("xf_remote","desired_capabilities"))
+    driver = Remote(Config.get("xf_remote","command_executor"),eval(Config.get("xf_remote","desired_capabilities")))
     my_page = MyPage(driver,RESULT_XF_LOGS_DIR,RESULT_XF_ERROR_SCREENSHOT_DIR)
     yield my_page
     driver.quit()
@@ -30,7 +30,7 @@ def Login_Fixture():
 
 @pytest.fixture(scope="class")
 def RecommenderRegistration_Fixture():
-    driver = Remote(Config.get("xf_remote","command_executor"),Config.get("xf_remote","desired_capabilities"))
+    driver = Remote(Config.get("xf_remote","command_executor"),eval(Config.get("xf_remote","desired_capabilities")))
     #获取我的页面
     my_page=MyPage(driver,RESULT_XF_LOGS_DIR,RESULT_XF_ERROR_SCREENSHOT_DIR)
     # 点击我的
@@ -59,6 +59,7 @@ def RecommenderRegistration_Fixture():
     generaltransactionlogin_page.GeneralTransactionlogin_Click_Login()
 
     yield
+
     driver.quit()
 
 

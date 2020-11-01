@@ -6,7 +6,7 @@
 #@Sotfware :PyCharm
 from common.base_page import BasePage
 from locator.xf.xf_page_locators import GeneralTransactionlogin_Page_Locator
-
+import time
 class GeneralTransactionloginPage(BasePage):
 
 
@@ -15,7 +15,7 @@ class GeneralTransactionloginPage(BasePage):
         普通交易账号登录页面，输入账号
         :return:
         """
-        self.Wait_Element_Visibility(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Account,"普通交易登录页面，输入用户账号")
+        time.sleep(1)
         self.Input_Element_SendKeys(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Account,"普通交易登录页面，输入用户账号",value)
 
 
@@ -33,5 +33,5 @@ class GeneralTransactionloginPage(BasePage):
         普通交易账号登录页面，点击登录
         :return:
         """
-        self.Wait_Element_Clickable(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Login_button,"普通交易登录页面，点击登录按钮")
+        time.sleep(1)
         self.Click_Eelement(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Login_button,"普通交易登录页面，点击登录按钮")

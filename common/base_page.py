@@ -32,7 +32,7 @@ class BasePage():
         :return:
         """
         try:
-            WebDriverWait(driver,10,0.5).until(EC.element_to_be_clickable(ele))
+            WebDriverWait(self.driver,10,0.5).until(EC.element_to_be_clickable(ele))
         except Exception as e:
             self.Error_ScreenShot(self.screenshotfilepath,ele_desc)
             self.log.error(f"等待{ele_desc}元素，可点击失败！")
@@ -49,7 +49,7 @@ class BasePage():
         :return:
         """
         try:
-            WebDriverWait(driver,10,0.5).until(EC.presence_of_element_located(ele))
+            WebDriverWait(self.driver,10,0.5).until(EC.presence_of_element_located(ele))
         except Exception as e:
             self.Error_ScreenShot(self.screenshotfilepath,ele_desc)
             self.log.error(f"等待{ele_desc}元素，被加载失败！")
@@ -66,7 +66,7 @@ class BasePage():
         :return:
         """
         try:
-            WebDriverWait(driver,10,0.5).until(EC.visibility_of_element_located(ele))
+            WebDriverWait(self.driver,10,0.5).until(EC.visibility_of_element_located(ele))
         except Exception as e:
             self.Error_ScreenShot(self.screenshotfilepath,ele_desc)
             self.log.error(f"等待{ele_desc}元素，可见失败！")
@@ -296,7 +296,7 @@ if __name__ == '__main__':
 
     )
 
-    BP = BasePage(driver,RESULT_XF_LOGS_DIR)
+    BP = BasePage(driver,RESULT_XF_LOGS_DIR,RESULT_XF_ERROR_SCREENSHOT_DIR)
     ele =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/tv_news_title")')
     top =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/search_layout")')
     bottom =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/bigData_layout")')
