@@ -47,8 +47,32 @@ class MyPage(BasePage):
         我的页面，点击联系客服
         :return:
         """
+        self.Wait_Element_Visibility(my_page_Locator.MyPage_Contact_Customer_Service,"我的页面，点击联系客服")
         self.Click_Eelement(my_page_Locator.MyPage_Contact_Customer_Service,"我的页面，点击联系客服")
 
+    def MyPage_Swipe_To_Signed_In_Mobile_Visibility(self):
+        """
+        我的页面，滑动到已登录手机好可见
+        :return:
+        """
+        self.Swipe_Element_To_Visibility(my_page_Locator.MyPage_Signed_In_Mobile, "我的页面，滑动到已登录手机号",
+                                         my_page_Locator.MyPage_Top_Locator, my_page_Locator.MyPage_Bottom_Locator
+                                         )
+
+    def MyPage_Click_Signed_In_Mobile(self):
+        """
+        我的页面，点击已登录手机号码
+        :return:
+        """
+        self.Click_Eelement(my_page_Locator.MyPage_Signed_In_Mobile, "我的页面，点击已登录手机号")
+
+    def MyPage_Click_Advertisement_Window_Close(self):
+        """
+        我的页面，点击关闭广告弹框
+        :return:
+        """
+        self.Wait_Element_Visibility(my_page_Locator.MyPage_Advertisement_Window_Close,"我的页面，点击关闭广告弹窗")
+        self.Click_Eelement(my_page_Locator.MyPage_Advertisement_Window_Close,"我的页面，点击关闭广告弹窗")
 
 
 

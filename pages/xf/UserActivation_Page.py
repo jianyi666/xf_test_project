@@ -15,7 +15,7 @@ class UserActivationPage(BasePage):
         :param value:
         :return:
         """
-        time.sleep(1)
+        time.sleep(0.5)
         self.Input_Element_SendKeys(UserActivation_Page_Locator.UserActivation_Moblie,"用户激活页面，输入手机号",value)
 
 

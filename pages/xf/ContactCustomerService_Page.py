@@ -13,5 +13,7 @@ class ContactCustomerServicePage(BasePage):
         联系客服，点击推荐人登记
         :return:
         """
+        self.Wait_Element_Visibility(ContactCustomerService_Page_locator.ContactCustomerService_Recommender_Registration,
+                            "联系客服页面，点击推荐人登记")
         self.Click_Eelement(ContactCustomerService_Page_locator.ContactCustomerService_Recommender_Registration,
                             "联系客服页面，点击推荐人登记")

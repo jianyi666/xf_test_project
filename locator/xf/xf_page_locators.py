@@ -12,6 +12,8 @@ class my_page_Locator():
     MyPage_Bottom_my = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/tv_mine")')
     # 手机登录
     MyPage_Moblie_Login = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/mine_activate_phone_tv")')
+    # 已登录手机号
+    MyPage_Signed_In_Mobile = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/mine_phone_tv")')
     # 普通交易登录
     MyPage_Mine_Login = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/mine_login_ll")')
     # 联系客服
@@ -20,6 +22,8 @@ class my_page_Locator():
     MyPage_Top_Locator =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/mine_member_togo_rl")')
     # 我的页面顶部
     MyPage_Bottom_Locator = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("联系客服")')
+    # 我的页面广告弹框
+    MyPage_Advertisement_Window_Close = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/iv_close")')
 
 # 联系客服页面
 class ContactCustomerService_Page_locator():
@@ -45,7 +49,7 @@ class GeneralTransactionlogin_Page_Locator():
     # 输入登录密码
     GeneralTransactionlogin_PassWord =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("交易密码")')
     # 点击登录按钮
-    GeneralTransactionlogin_Login_button =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().className("android.widget.LinearLayout")')
+    GeneralTransactionlogin_Login_button =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/normal_status_text")')
 
 # 推荐人登记页面
 class RecommenderRegistration_Page_Locator():
@@ -59,4 +63,23 @@ class RecommenderRegistration_Page_Locator():
     RecommenderRegistration_Recommender_Name =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/tv_financial_result_name")')
     # 推荐人，营业部地址
     RecommenderRegistration_Recommender_Address =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/tv_financial_result_address")')
+
+# 我的资料页面
+class MyInformation_Page_Locator():
+    # 我的资料页面，手机号码
+    MyInformation_Mobile_Phone = (MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("手机号码")')
+
+
+# 退出登录页面
+class LogOut_Page_Locator():
+    # 退出登录页面，退出登录
+    LogOut_logout =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/mine_phone_logout_ll")')
+
+# 首页
+class Home_Page_Locator():
+
+    # 首页公告弹框关闭按钮
+    Home_Notice_Close_Button =(MobileBy.ANDROID_UIAUTOMATOR,'new UiSelector().resourceId("com.foundersc.app.xf:id/BTN_close")')
+
+
 

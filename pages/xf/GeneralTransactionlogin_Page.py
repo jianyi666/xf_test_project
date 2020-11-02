@@ -15,7 +15,7 @@ class GeneralTransactionloginPage(BasePage):
         普通交易账号登录页面，输入账号
         :return:
         """
-        time.sleep(1)
+        time.sleep(0.5)
         self.Input_Element_SendKeys(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Account,"普通交易登录页面，输入用户账号",value)
 
 
@@ -33,5 +33,5 @@ class GeneralTransactionloginPage(BasePage):
         普通交易账号登录页面，点击登录
         :return:
         """
-        time.sleep(1)
+        self.Wait_Element_Clickable(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Login_button,"普通交易登录页面，点击登录按钮")
         self.Click_Eelement(GeneralTransactionlogin_Page_Locator.GeneralTransactionlogin_Login_button,"普通交易登录页面，点击登录按钮")
