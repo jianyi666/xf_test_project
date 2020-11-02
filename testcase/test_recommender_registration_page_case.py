@@ -5,12 +5,18 @@
 #@File     :test_recommender_registration_page_case.py
 #@Sotfware :PyCharm
 import pytest
-from data.xf.recommenderregistration_test_data import RecommenderRegistration_Error_Data
+from data.xf.recommenderregistration_test_data import RecommenderRegistration_Error_Product_Code_Data
+from pages.xf.RecommenderRegistration_Page import RecommenderRegistrationPage
 class Test_RecommenderRegistration():
 
-    @pytest.mark.parametrize("cases",RecommenderRegistration_Error_Data)
+    @pytest.mark.parametrize("cases",RecommenderRegistration_Error_Product_Code_Data)
     def test_input_errot_product_code(self,cases,RecommenderRegistration_Fixture):
-        pass
+        recommenderregistration_page:RecommenderRegistrationPage = RecommenderRegistration_Fixture
+
+        # 输入产品code
+        recommenderregistration_page.RecommenderRegistration_Input_Product_Code(cases["productcode"])
+
+
 
 
 if __name__ == '__main__':
