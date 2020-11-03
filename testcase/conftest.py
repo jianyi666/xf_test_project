@@ -18,6 +18,7 @@ from pages.xf.RecommenderRegistration_Page import RecommenderRegistrationPage
 from pages.xf.MyInformation_Page import MyInformationPage
 from pages.xf.LogOut_Page import LogOutPage
 from pages.xf.Home_Page import HomePage
+
 @pytest.fixture(scope="class")
 def Login_Fixture():
     # 获取我的页面
@@ -25,11 +26,6 @@ def Login_Fixture():
     my_page = MyPage(driver,RESULT_XF_LOGS_DIR,RESULT_XF_ERROR_SCREENSHOT_DIR)
     yield my_page
     driver.quit()
-
-
-
-
-
 
 @pytest.fixture(scope="class")
 def RecommenderRegistration_Fixture():
@@ -97,6 +93,9 @@ def RecommenderRegistration_Fixture():
     logout_page.LogOut_Click_Log_Out()
 
     driver.quit()
+
+
+
 
 
 
